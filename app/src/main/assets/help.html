@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Journal Companion - Help</title>
+<style>
+  body {
+    font-family: sans-serif;
+    color: #14231A;
+    background: #FFFFFF;
+    margin: 0;
+    padding: 4px 12px 24px 12px;
+    line-height: 1.5;
+    font-size: 15px;
+  }
+  h2 {
+    color: #16A34A;
+    font-size: 18px;
+    margin: 22px 0 6px 0;
+  }
+  p { margin: 6px 0; }
+  ol, ul { padding-left: 22px; margin: 6px 0; }
+  li { margin: 4px 0; }
+  .card {
+    background: #F4FBF6;
+    border: 1px solid #B7D9C2;
+    border-radius: 12px;
+    padding: 10px 14px;
+    margin: 10px 0;
+  }
+  .tag {
+    display: inline-block;
+    background: #DCFCE7;
+    color: #15803D;
+    border-radius: 999px;
+    padding: 1px 10px;
+    font-weight: bold;
+    font-size: 13px;
+    margin: 2px 2px;
+  }
+  b { color: #15803D; }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <p>Welcome to <b>AI Journal Companion</b>. Write about your day and the app tells you the
+  main emotion in your writing, plus one line of supportive advice.</p>
+</div>
+
+<h2>Getting around</h2>
+<ul>
+  <li><b>&larr; Back</b> (top left) returns to the previous screen. The phone's Back button does the same.</li>
+  <li><b>Home</b> (top right) jumps straight to the main menu.</li>
+  <li><b>&#9432; Info</b> (top right) opens this Help guide from any screen.</li>
+</ul>
+
+<h2>1. Write a journal entry</h2>
+<ol>
+  <li>On the main menu, tap <b>New Journal Entry</b>.</li>
+  <li>Type how you feel in the text box.</li>
+  <li>Tap <b>Analyze Emotion</b>, or press <b>Enter/Done</b> on the keyboard.</li>
+  <li>Your result shows the emotion with an emoji and a piece of advice.</li>
+  <li>Tap <b>Clear</b> to empty the box, <b>New Entry</b> to start again, or <b>History</b> to see past entries.</li>
+</ol>
+<p>Possible emotions:
+  <span class="tag">JOY &#128522;</span>
+  <span class="tag">SADNESS &#128546;</span>
+  <span class="tag">ANGER &#128545;</span>
+  <span class="tag">FEAR &#128552;</span>
+  <span class="tag">SURPRISE &#128562;</span>
+</p>
+
+<h2>2. Search your history</h2>
+<ol>
+  <li>Open <b>View History</b>.</li>
+  <li>Type an emotion (for example <i>joy</i>) or tap one of the emotion chips.</li>
+  <li>Choose the search method from the <b>Search with</b> dropdown:
+    HashMap, Binary Tree or Doubly Linked List.</li>
+  <li>The number of matches and the search time appear under the buttons.</li>
+</ol>
+
+<h2>3. Sort by emotion</h2>
+<p>Use the <b>Sort by emotion</b> dropdown and pick <b>Bubble</b>, <b>Insertion</b> or
+<b>Selection</b> Sort. Entries are ordered A&ndash;Z by emotion (newest first within the
+same emotion) and the time taken is shown.</p>
+
+<h2>4. Delete an entry (drag and drop)</h2>
+<ol>
+  <li>Press and hold an entry until it shrinks slightly.</li>
+  <li>Drag it down onto the red <b>Drop here to delete</b> zone.</li>
+  <li>When the zone says <b>Release to delete</b>, let go.</li>
+</ol>
+<p>Dropping anywhere else puts the entry back.</p>
+
+<h2>5. See your emotion chart</h2>
+<p>Tap <b>Show Chart</b> on the History screen for a pie chart popup, or open
+<b>Emotion Insights</b> from the main menu for the full-screen chart and legend.</p>
+
+<h2>FAQ</h2>
+<div class="card">
+  <p><b>"Couldn't reach the AI"?</b><br>
+  The backend must be running on your computer. Start Ollama, then run
+  <i>start_backend.bat</i> in the backend folder, and try again.</p>
+</div>
+<div class="card">
+  <p><b>The first analysis is slow.</b><br>
+  The AI model loads into memory the first time. Later requests are faster.</p>
+</div>
+<div class="card">
+  <p><b>Are my entries saved?</b><br>
+  Entries are kept in memory while the app is open and are cleared when the app closes.</p>
+</div>
+
+<h2>Feedback</h2>
+<p>Found a problem or have an idea? Tell your developer or class lecturer, including what you
+tapped and what you expected to happen.</p>
+
+</body>
+</html>
