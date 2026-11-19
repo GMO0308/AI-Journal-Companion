@@ -1,58 +1,87 @@
 package com.example.aijournalcompanion.ui.theme
 
-import android.app.Activity
-import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Shapes
 import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 
-private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
-)
-
+/** Light green colour scheme (default). */
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
+    primary = Green600,
     onPrimary = Color.White,
+    primaryContainer = Green100,
+    onPrimaryContainer = Green900,
+    secondary = Green700,
     onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    secondaryContainer = Lime100,
+    onSecondaryContainer = Green900,
+    tertiary = Lime500,
+    onTertiary = Green900,
+    background = Mint50,
+    onBackground = InkDark,
+    surface = SurfaceWhite,
+    onSurface = InkDark,
+    surfaceVariant = Green100,
+    onSurfaceVariant = InkMuted,
+    outline = OutlineGreen,
+    outlineVariant = OutlineGreen,
+    error = ErrorRed,
+    onError = Color.White
 )
 
+/** Dark green colour scheme (used when the phone is in dark mode). */
+private val DarkColorScheme = darkColorScheme(
+    primary = Green400,
+    onPrimary = Green900,
+    primaryContainer = Green800Dark,
+    onPrimaryContainer = NightText,
+    secondary = Green400,
+    onSecondary = Green900,
+    secondaryContainer = Green800Dark,
+    onSecondaryContainer = NightText,
+    tertiary = Lime400,
+    onTertiary = Green900,
+    background = NightBackground,
+    onBackground = NightText,
+    surface = NightSurface,
+    onSurface = NightText,
+    surfaceVariant = NightSurface,
+    onSurfaceVariant = NightMuted,
+    outline = NightOutline,
+    outlineVariant = NightOutline,
+    error = ErrorRedLight,
+    onError = Green900
+)
+
+/** Rounded, soft shapes for a minimal look. */
+private val AppShapes = Shapes(
+    extraSmall = RoundedCornerShape(6.dp),
+    small = RoundedCornerShape(10.dp),
+    medium = RoundedCornerShape(16.dp),
+    large = RoundedCornerShape(24.dp),
+    extraLarge = RoundedCornerShape(32.dp)
+)
+
+/**
+ * App theme. Dynamic (wallpaper-based) colours are turned off so the
+ * green brand colours are always used.
+ */
 @Composable
 fun AIJournalCompanionTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
-    val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }
-
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
-    }
+    val colorScheme = if (darkTheme) DarkColorScheme else LightColorScheme
 
     MaterialTheme(
         colorScheme = colorScheme,
         typography = Typography,
+        shapes = AppShapes,
         content = content
     )
 }
