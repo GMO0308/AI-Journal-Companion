@@ -1,3 +1,4 @@
+# ---- Android / Gradle ----
 *.iml
 .gradle
 /local.properties
@@ -13,3 +14,11 @@
 .externalNativeBuild
 .cxx
 local.properties
+.kotlin/
+
+# ---- Python backend ----
+# Virtual environments are rebuilt by start_backend.bat, so they are not committed
+backend/venv/
+backend/.venv/
+__pycache__/
+*.pyc
